@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 01:53:17 by lfelipe-          #+#    #+#             */
-/*   Updated: 2021/12/15 17:55:25 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/11 02:34:00 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	main(int argc, char *argv[])
 {

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   lst_newnode.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 01:24:23 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/05 21:49:24 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/06 19:09:08 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		check_dup(t_list *head)
+t_list	*lst_newnode(int content)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	t_list	*new;
 
-	i = head;
-	res = 0;
-	while (i && !res)
-	{
-		j = i->next;
-		while (j && !res)
-		{
-			if (i->content == j->content)
-				res++;
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (res);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = content;
+	new->next = 0;
+	new->prev = 0;
+	return (new);
 }

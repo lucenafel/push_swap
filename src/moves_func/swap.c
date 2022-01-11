@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 01:24:23 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/06 19:53:46 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/11 02:34:45 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		check_dup(t_list *head)
+/*add protection for empty list and list with less than 2 elements */
+void	swap(t_list **head, char *c)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	t_list	*second;
+	t_list	*third;
 
-	i = head;
-	res = 0;
-	while (i && !res)
-	{
-		j = i->next;
-		while (j && !res)
-		{
-			if (i->content == j->content)
-				res++;
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (res);
+	second = (*head)->next;
+	third = second->next;
+	(*head)->next = third;
+	third->prev = (*head);
+	second->prev = NULL;
+	second->next = *head;
+	*head = second;
 }

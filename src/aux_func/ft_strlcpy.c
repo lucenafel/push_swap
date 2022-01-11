@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 01:24:23 by lfelipe-         ###   ########.fr       */
+/*   Created: 2021/05/24 13:05:39 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/06 18:59:32 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		check_dup(t_list *head)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	size_t	i;
 
-	i = head;
-	res = 0;
-	while (i && !res)
+	if (!dst || !src)
+		return (0);
+	i = 0;
+	if (size > 0)
 	{
-		j = i->next;
-		while (j && !res)
+		while (i < size - 1 && src[i])
 		{
-			if (i->content == j->content)
-				res++;
-			j = j->next;
+			dst[i] = src[i];
+			i++;
 		}
-		i = i->next;
+		dst[i] = '\0';
 	}
-	return (res);
+	return (ft_strlen(src));
 }

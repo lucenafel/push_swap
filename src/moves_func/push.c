@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 01:24:23 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/10 23:37:11 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/11 03:29:59 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		check_dup(t_list *head)
+void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	t_list	*tmp;
 
-	i = head;
-	res = 0;
-	while (i && !res)
-	{
-		j = i->next;
-		while (j && !res)
-		{
-			if (i->content == j->content)
-				res++;
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (res);
+	tmp = stack_a->head->next;
+
+
+
+
+
 }

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   lst_addfront.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 01:24:23 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/05 18:37:36 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/06 19:09:06 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		check_dup(t_list *head)
+void	lst_addfront(t_list **head, t_list **tail, t_list *new_node)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	t_list	*first;
 
-	i = head;
-	res = 0;
-	while (i && !res)
+	if (!*head && !*tail)
 	{
-		j = i->next;
-		while (j && !res)
-		{
-			if (i->content == j->content)
-				res++;
-			j = j->next;
-		}
-		i = i->next;
+		*head = new_node;
+		*tail = new_node;
 	}
-	return (res);
+	else
+	{
+		first = *head;
+		new_node->next = first;
+		first->prev = new_node;
+		*head = new_node;
+	}
 }
