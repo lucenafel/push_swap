@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/14 22:59:49 by lfelipe-          #+#    #+#              #
-#    Updated: 2021/12/15 00:42:39 by lfelipe-         ###   ########.fr        #
+#    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
+#    Updated: 2022/01/12 14:39:39 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,6 @@ ADIR	= aux/
 AUD		= $(addprefix $(ADIR), $(AUX))
 
 OBJS	= $(addprefix $(ODIR), $(SRCS:.c=.o))
-
-# MOBJ	= $(addprefix $(ODIR), $(MPIPE:.c=.o))
-
-# BOBJ	= $(addprefix $(ODIR), $(BPIPE:.c=.o))
 
 CC		= gcc
 

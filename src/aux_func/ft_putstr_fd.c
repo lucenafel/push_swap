@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_addback.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 21:25:40 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 20:02:41 by lfelipe-         ###   ########.fr       */
+/*   Created: 2021/05/29 00:20:18 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/12 15:00:36 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_addback(t_list **head, t_list *new_node)
+void	ft_putstr_fd(char *s, int fd)
 {
-	t_list	*last;
-
-	if (!*head)
-		*head = new_node;
-	else
+	while (*s != '\0')
 	{
-		last = lst_last(*head);
-		last->next = new_node;
-		new_node->prev = last;
+		write(fd, s, 1);
+		s++;
 	}
 }

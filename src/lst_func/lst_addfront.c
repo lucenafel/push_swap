@@ -6,20 +6,21 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 18:37:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/06 19:09:06 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/11 19:53:49 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_addfront(t_list **head, t_list **tail, t_list *new_node)
+void	lst_addfront(t_list **head, t_list *new_node)
 {
 	t_list	*first;
 
-	if (!*head && !*tail)
+	if (!*head)
 	{
 		*head = new_node;
-		*tail = new_node;
+		(*head)->next = 0;
+		(*head)->prev = 0;
 	}
 	else
 	{

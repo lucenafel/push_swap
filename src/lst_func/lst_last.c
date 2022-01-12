@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_addback.c                                      :+:      :+:    :+:   */
+/*   lst_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 21:25:40 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/11 20:02:41 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/11 20:36:32 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/11 20:37:45 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_addback(t_list **head, t_list *new_node)
+t_list	*lst_last(t_list *head)
 {
-	t_list	*last;
+	t_list	*tmp;
 
-	if (!*head)
-		*head = new_node;
-	else
-	{
-		last = lst_last(*head);
-		last->next = new_node;
-		new_node->prev = last;
-	}
+	if (!head)
+		return (0);
+	tmp = head;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }
