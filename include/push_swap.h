@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/12 19:25:33 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:47:09 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ typedef struct s_list
 	struct s_list	*prev;
 	int				content;
 }	t_list;
+
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 /* list functions */
 
@@ -47,5 +50,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+int	ft_isdigit(int c);
 
 #endif
