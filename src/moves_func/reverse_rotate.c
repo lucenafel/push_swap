@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:55:38 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/12 19:00:23 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/18 16:25:39 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	reverse_rotate(t_list **head)
 		last = lst_last(*head);
 		prev = last->prev;
 		prev->next = 0;
-		lstadd_front(head, last);
+		lst_addfront(head, last);
 	}
 }
 

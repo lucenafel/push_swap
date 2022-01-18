@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 23:37:11 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/12 19:01:10 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/18 16:25:12 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	push(t_list **head_a, t_list **head_b)
 	if (*head_b)
 	{
 		tmp = *head_b;
-		lstadd_front(head_a, new_node(tmp->content));
+		lst_addfront(head_a, lst_new(tmp->content));
 		if ((*head_b)->next)
 		{
 			next = (*head_b)->next;

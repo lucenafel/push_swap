@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/13 15:47:09 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/18 16:24:07 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ typedef struct s_list
 
 /* list functions */
 
+ void	lst_addback(t_list **head, t_list *new_node);
+ void	lst_addfront(t_list **head, t_list *new_node);
+ void	lst_clear(t_list **head);
+ t_list	*lst_last(t_list *head);
+ t_list	*lst_new(int content);
+
 /* moves functions */
 
 void	sa(t_list **head);
@@ -46,10 +52,10 @@ void	rrr(t_list **head_a, t_list **head_b);
 
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlen(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *str);
 int	ft_isdigit(int c);
 
 #endif
