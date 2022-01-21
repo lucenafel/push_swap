@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 20:48:43 by lfelipe-          #+#    #+#             */
-/*   Updated: 2021/12/17 00:06:23 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/21 17:40:37 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ static int	check_list(char *str)
 
 	i = 0;
 	res = 0;
-	while (str[i])
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] && !res)
 	{
 		if (!ft_isdigit(str[i]))
 		{

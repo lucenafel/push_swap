@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_last.c                                         :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 20:36:32 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 15:48:02 by lfelipe-         ###   ########.fr       */
+/*   Created: 2021/09/27 19:05:42 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/21 16:37:03 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_list	*lst_last(t_list *head)
+int	ft_isspace(int c)
 {
-	t_list	*tmp;
+	int	res;
 
-	if (!head)
-		return (0);
-	tmp = head;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	res = 0;
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\v'
+		|| c == '\f' || c == '\r')
+		res = 1;
+	return (res);
 }

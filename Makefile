@@ -6,18 +6,23 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/01/18 16:42:20 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/01/21 17:32:53 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
 SRCS	= push_swap.c \
+		  dup_check.c \
+		  space_check.c \
+		  valid_test.c \
 		  $(PAUXSRC) \
 		  $(PLSTSRC) \
 		  $(PMOVSRC)
 
-AUXSRC	= ft_isdigit.c \
+AUXSRC	= ft_free.c \
+		  ft_isdigit.c \
+		  ft_isspace.c \
 		  ft_putendl_fd.c \
 		  ft_putstr_fd.c \
 		  ft_split.c \

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_last.c                                         :+:      :+:    :+:   */
+/*   space_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 20:36:32 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 15:48:02 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/21 16:02:54 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/21 17:59:59 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*lst_last(t_list *head)
+char	**space_check(char *argv)
 {
-	t_list	*tmp;
+	int 	i;
+	int 	res;
+	char	**split;
 
-	if (!head)
-		return (0);
-	tmp = head;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	i = 0;
+	res = 0;
+	split = 0;
+	while (argv[i] && !res)
+	{
+		res = ft_isspace(argv[i]);
+		i++;
+	}
+	if (res)
+		split = ft_split(argv, ' ');
+	return (split);
 }
