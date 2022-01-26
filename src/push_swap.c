@@ -6,12 +6,28 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 18:15:40 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:10:25 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> // remove
+
+int		check_int_limit(t_list *lst)
+{
+	t_list	*tmp;
+	int		res;
+
+	tmp = lst;
+	res = 0;
+	while (tmp->next && !res)
+	{
+		if (tmp->content < INT_MIN || tmp->content > INT_MAX)
+			res++;
+		tmp = tmp->next;
+	}
+	return (res);
+}
 
 void	ft_quit(char **split, t_list **list)
 {
@@ -19,33 +35,6 @@ void	ft_quit(char **split, t_list **list)
 	ft_free(split);
 	printf("Error\n");
 	exit(-1);
-}
-
-long	ft_atol(const char *str)
-{
-	int		signal;
-	long	result;
-
-	result = 0;
-	signal = 1;
-	while (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
-	{
-		str++;
-	}
-	if (*str == '-')
-	{
-		signal = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		result = (result * 10) + (*str - '0');
-		str++;
-	}
-	return (result * signal);
 }
 
 t_list	*start_list(char **list)
@@ -75,14 +64,12 @@ t_list	*init_list(int argc, char **argv)
 	if (argc == 2)
 	{
 		split = space_check(argv[1]);
-		// int i = 0;
-		// while (split[i])
-		// 	printf("%s\n", split[i++]);
 		if (split)
 		{
 			res = check_arg(split);
 			list = start_list(split);
 			res = check_dup(list);
+			res = check_int_limit(list);
 		}
 		if (!split || res)
 			ft_quit(split, &list);
@@ -90,9 +77,11 @@ t_list	*init_list(int argc, char **argv)
 	}
 	else
 	{
+		argv++;
 		res = check_arg(argv);
 		list = start_list(argv);
 		res = check_dup(list);
+		res = check_int_limit(list);
 		printf("res -> %d\n", res);
 		if (res)
 			ft_quit(0, &list);
@@ -109,7 +98,7 @@ void	output_list(t_list *head)
 	tmp = head;
 	while (tmp)
 	{
-		printf("content of %d node -> %d\n", i, tmp->content);
+		printf("content of %d node -> %ld\n", i, tmp->content);
 		tmp = tmp->next;
 		i++;
 	}
@@ -123,5 +112,8 @@ int	main(int argc, char *argv[])
 	stack = init_list(argc, argv);
 	output_list(stack);
 	lst_clear(&stack);
+	// if (argv[100])
+	// 	printf("%d\n", argc);
+	// printf("%ld\n", ft_atol(argv[1]));
 
 }

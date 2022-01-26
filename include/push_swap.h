@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 17:34:36 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:55:03 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_list
 {
 	struct s_list	*next;
 	struct s_list	*prev;
-	int				content;
+	long			content;
 }	t_list;
 
 # define INT_MAX 2147483647
@@ -32,7 +32,7 @@ void	lst_addback(t_list **head, t_list *new_node);
 void	lst_addfront(t_list **head, t_list *new_node);
 void	lst_clear(t_list **head);
 t_list	*lst_last(t_list *head);
-t_list	*lst_new(int content);
+t_list	*lst_new(long content);
 
 /* moves functions */
 
@@ -57,6 +57,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_free(char **str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
+long	ft_atol(const char *str);
 int		ft_isdigit(int c);
 int		ft_isspace(int c);
 

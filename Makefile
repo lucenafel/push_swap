@@ -6,7 +6,7 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/01/21 17:32:53 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/01/26 04:05:14 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS	= push_swap.c \
 		  $(PLSTSRC) \
 		  $(PMOVSRC)
 
-AUXSRC	= ft_free.c \
+AUXSRC	= ft_atol.c \
+		  ft_free.c \
 		  ft_isdigit.c \
 		  ft_isspace.c \
 		  ft_putendl_fd.c \

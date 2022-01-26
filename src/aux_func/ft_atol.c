@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_newnode.c                                      :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 21:49:24 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/26 17:55:05 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/01/26 04:04:02 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/26 04:05:14 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_list	*lst_new(long content)
+long	ft_atol(const char *str)
 {
-	t_list	*new;
+	int		signal;
+	long	result;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (0);
-	new->content = content;
-	new->next = 0;
-	new->prev = 0;
-	return (new);
+	result = 0;
+	signal = 1;
+	while (*str == ' ' || *str == '\n' || *str == '\t'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
+	{
+		str++;
+	}
+	if (*str == '-')
+	{
+		signal = -1;
+		str++;
+	}
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = (result * 10) + (*str - '0');
+		str++;
+	}
+	return (result * signal);
 }
