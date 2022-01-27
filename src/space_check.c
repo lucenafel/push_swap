@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:02:54 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 17:59:59 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:21:27 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	**space_check(char *argv)
 {
-	int 	i;
-	int 	res;
+	int		i;
+	int		res;
 	char	**split;
 
 	i = 0;

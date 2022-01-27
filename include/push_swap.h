@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/26 17:55:03 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:12:40 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ t_list	*init_list(int argc, char **argv);
 char	**space_check(char *argv);
 int		check_arg(char **list);
 int		check_dup(t_list *head);
-
 
 #endif

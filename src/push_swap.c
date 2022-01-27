@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/26 19:10:25 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:42:35 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,15 @@ t_list	*init_list(int argc, char **argv)
 			res = check_dup(list);
 			res = check_int_limit(list);
 		}
-		if (!split || res)
+		else
+		{
+			argv++;
+			res = check_arg(argv);
+			list = start_list(argv);
+			res = check_dup(list);
+			res = check_int_limit(list);
+		}
+		if (res)
 			ft_quit(split, &list);
 		ft_free(split);
 	}

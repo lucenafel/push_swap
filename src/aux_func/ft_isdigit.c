@@ -6,13 +6,13 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 13:02:19 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 17:46:14 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:13:06 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	int res;
+	int	res;
 
 	res = 0;
 	if (c >= 48 && c <= 59)
