@@ -6,14 +6,16 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/01/26 04:05:14 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/01/27 20:24:14 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
-SRCS	= push_swap.c \
+SRCS	= check_int_limit.c \
 		  dup_check.c \
+		  list_init.c \
+		  push_swap.c \
 		  space_check.c \
 		  valid_test.c \
 		  $(PAUXSRC) \
