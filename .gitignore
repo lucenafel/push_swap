@@ -4,3 +4,4 @@ a.out
 .vscode
 /test/*
 push_swap
+.ccls-cache/
