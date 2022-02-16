@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 19:53:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 15:47:50 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/16 01:16:19 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 void	swap(t_list **head)
 {
+	t_list	*first;
 	t_list	*second;
 	t_list	*third;
 
 	if (*head && (*head)->next)
 	{
+		first = (*head);
 		second = (*head)->next;
-		third = second->next;
+		third = (*head)->next->next;
 		if (third)
 		{
-			(*head)->next = third;
-			third->prev = (*head);
+			third->prev = first;
+			first->next = third;
 		}
 		else
-			(*head)->next = NULL;
-		second->prev = NULL;
-		second->next = *head;
-		*head = second;
+			first->next = 0;
+		second->next = first;
+		second->prev = 0;
+		first->prev = second;
+		(*head) = second;
 	}
 }
 

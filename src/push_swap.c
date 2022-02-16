@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/15 21:57:32 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/16 02:03:38 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,20 @@ void	output_list(t_list *head)
 // 	// }
 // 	// if ()
 // }
+
+t_list	*lst_pop_first(t_list **head)
+{
+	t_list	*poped;
+	t_list	*new_head;
+
+	poped = *head;
+	new_head = (*head)->next;
+	new_head->prev = 0;
+	(*head)->next = new_head->next;
+	(*head) = new_head;
+	poped->next = 0;
+	return (poped);
+}
 
 t_list	*get_mediam(t_list *head) // get better name
 {
@@ -102,32 +116,46 @@ int	main(int argc, char *argv[])
 	printf("before\n");
 	output_list(s_case1);
 	printf("after\n");
-	base_order_three(s_case1);
+	base_order_b(&s_case1);
 	output_list(s_case1);
 	printf("Case 2\n");
 	printf("before\n");
 	output_list(s_case2);
 	printf("after\n");
-	base_order_three(s_case2);
+	base_order_b(&s_case2);
 	output_list(s_case2);
 	printf("Case 3\n");
 	printf("before\n");
 	output_list(s_case3);
 	printf("after\n");
-	base_order_three(s_case3);
+	base_order_b(&s_case3);
 	output_list(s_case3);
 	printf("Case 4\n");
 	printf("before\n");
 	output_list(s_case4);
 	printf("after\n");
-	base_order_three(s_case4);
+	base_order_b(&s_case4);
 	output_list(s_case4);
 	printf("Case 5\n");
 	printf("before\n");
 	output_list(s_case5);
 	printf("after\n");
-	base_order_three(s_case5);
+	base_order_b(&s_case5);
 	output_list(s_case5);
+
+
+	// printf("stack\n");
+	// t_list *pop = lst_pop_first(&stack);
+	
+	// output_list(stack);
+	// sa(&stack);
+	// output_list(stack);
+	// ra(&stack);
+	// output_list(stack);
+	// rra(&stack);
+	// output_list(stack);
+	// printf("poped\n");
+	// output_list(pop);
 
 
 
