@@ -6,19 +6,21 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/02/12 20:56:35 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/02/15 21:47:43 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
 SRCS	= check_int_limit.c \
+		  check_order.c \
 		  dup_check.c \
 		  list_init.c \
 		  push_swap.c \
 		  space_check.c \
 		  valid_test.c \
 		  qsort.c \
+		  base_case_a.c \
 		  $(PAUXSRC) \
 		  $(PLSTSRC) \
 		  $(PMOVSRC)
@@ -37,6 +39,7 @@ AUXSRC	= ft_atol.c \
 LSTSRC	= lst_addback.c \
 		  lst_addfront.c \
 		  lst_clear.c \
+		  lst_dup.c \
 		  lst_last.c \
 		  lst_newnode.c \
 		  lst_size.c

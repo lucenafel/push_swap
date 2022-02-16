@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/12 20:58:17 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/15 21:48:24 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_list
 void	lst_addback(t_list **head, t_list *new_node);
 void	lst_addfront(t_list **head, t_list *new_node);
 void	lst_clear(t_list **head);
+t_list	*lst_dup(t_list *head);
 t_list	*lst_last(t_list *head);
 t_list	*lst_new(long content);
 int		lst_size(t_list *head);
@@ -70,5 +71,10 @@ int		check_list(char **list);
 int		check_dup(t_list *head);
 int		check_int_limit(t_list *lst);
 void	q_sort(t_list *first, t_list *last);
+int		check_crescent_order(t_list *head);
+int		check_reverse_order(t_list *head);
+
+/* base cases func */
+void	base_order_three(t_list *head);
 
 #endif
