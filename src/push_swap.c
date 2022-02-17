@@ -6,14 +6,14 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/16 02:03:38 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/17 00:41:24 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> // remove
 
-void	output_list(t_list *head)
+void	output_list(t_list *head) // remove
 {
 	t_list	*tmp;
 	int		i;
@@ -84,87 +84,21 @@ t_list	*get_mediam(t_list *head) // get better name
 	return (tmp);
 }
 
+void	sort_stack(t_list **head)
+{
+	t_list	*stack_b;
+
+	stack_b = 0;
+	if ()
+}
+
 
 int	main(int argc, char *argv[])
 {
 	t_list	*stack;
-	t_list	*s_case1 = 0;
-	t_list	*s_case2 = 0;
-	t_list	*s_case3 = 0;
-	t_list	*s_case4 = 0;
-	t_list	*s_case5 = 0;
-	int case1[3] = {3, 2, 1};
-	int case2[3] = {1, 3, 2};
-	int case3[3] = {2, 3, 1};
-	int case4[3] = {2, 1, 3};
-	int case5[3] = {3, 1, 2};
 
-	for (int i = 0; i < 3; i++)
-	{
-		lst_addback(&s_case1, lst_new(case1[i]));
-		lst_addback(&s_case2, lst_new(case2[i]));
-		lst_addback(&s_case3, lst_new(case3[i]));
-		lst_addback(&s_case4, lst_new(case4[i]));
-		lst_addback(&s_case5, lst_new(case5[i]));
-	}
-	
 	stack = 0;
 	if (argc > 1)
 		stack = init_list(argc, argv);
-
-	printf("Case 1\n");
-	printf("before\n");
-	output_list(s_case1);
-	printf("after\n");
-	base_order_b(&s_case1);
-	output_list(s_case1);
-	printf("Case 2\n");
-	printf("before\n");
-	output_list(s_case2);
-	printf("after\n");
-	base_order_b(&s_case2);
-	output_list(s_case2);
-	printf("Case 3\n");
-	printf("before\n");
-	output_list(s_case3);
-	printf("after\n");
-	base_order_b(&s_case3);
-	output_list(s_case3);
-	printf("Case 4\n");
-	printf("before\n");
-	output_list(s_case4);
-	printf("after\n");
-	base_order_b(&s_case4);
-	output_list(s_case4);
-	printf("Case 5\n");
-	printf("before\n");
-	output_list(s_case5);
-	printf("after\n");
-	base_order_b(&s_case5);
-	output_list(s_case5);
-
-
-	// printf("stack\n");
-	// t_list *pop = lst_pop_first(&stack);
-	
-	// output_list(stack);
-	// sa(&stack);
-	// output_list(stack);
-	// ra(&stack);
-	// output_list(stack);
-	// rra(&stack);
-	// output_list(stack);
-	// printf("poped\n");
-	// output_list(pop);
-
-
-
-
-
 	lst_clear(&stack);
-	lst_clear(&s_case1);
-	lst_clear(&s_case2);
-	lst_clear(&s_case3);
-	lst_clear(&s_case4);
-	lst_clear(&s_case5);
 }

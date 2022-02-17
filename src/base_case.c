@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:58:09 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/16 02:06:21 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:32:56 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	base_order_b(t_list **head)
 		sb(head);
 		rrb(head);
 	}
-	else if (n1->content < n2->content && n1->content < n3->content)
+	else if (n1->content < n3->content && n3->content < n2->content)
 		rb(head);
-	else if (n1->content < n2->content && n1->content > n3->content)
+	else if (n2->content > n1->content && n3->content < n1->content)
 		sb(head);
 	else if (n1->content > n2->content && n1->content < n3->content)
 		rrb(head);
