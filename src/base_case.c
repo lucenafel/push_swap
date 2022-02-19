@@ -6,13 +6,31 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 01:58:09 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/16 19:32:56 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:21:33 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	base_order_a(t_list **head)
+void	base_order_two_a(t_list **head)
+{
+	t_list	*next;
+
+	next = (*head)->next;
+	if ((*head)->content > next->content)
+		sa(head);
+}
+
+void	base_order_two_b(t_list **head)
+{
+	t_list	*next;
+
+	next = (*head)->next;
+	if ((*head)->content < next->content)
+		sb(head);
+}
+
+void	base_order_three_a(t_list **head)
 {
 	t_list	*n1;
 	t_list	*n2;
@@ -39,7 +57,7 @@ void	base_order_a(t_list **head)
 		ra(head);
 }
 
-void	base_order_b(t_list **head)
+void	base_order_three_b(t_list **head)
 {
 	t_list	*n1;
 	t_list	*n2;

@@ -6,7 +6,7 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/02/16 02:00:42 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/02/19 18:50:10 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS	= check_int_limit.c \
 		  valid_test.c \
 		  qsort.c \
 		  base_case.c \
+		  order_five.c \
 		  $(PAUXSRC) \
 		  $(PLSTSRC) \
 		  $(PMOVSRC)

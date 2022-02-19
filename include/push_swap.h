@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/16 02:01:01 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:50:20 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ int		check_crescent_order(t_list *head);
 int		check_reverse_order(t_list *head);
 
 /* base cases func */
-void	base_order_a(t_list **head);
-void	base_order_b(t_list **head);
+void	base_order_three_a(t_list **head);
+void	base_order_three_b(t_list **head);
+t_list	*get_median(t_list *head);
+void	base_order_two_b(t_list **head);
+void	order_five(t_list **stack_a);
 
 #endif
