@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/19 18:51:52 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:09:31 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,6 @@ void	output_list(t_list *head) // remove
 		i++;
 	}
 }
-
-// void	order_three(t_list **head)
-// {
-// 	long	first;
-// 	long	second;
-// 	long	third;
-
-// 	first = (*head)->content;
-// 	second = (*head)->next->content;
-// 	third = (*head)->next->next->content;
-// 	printf("%ld\n", first);
-// 	printf("%ld\n", second);
-// 	printf("%ld\n", third);
-// 	// if (!check_reverse_order(*head))
-// 	// {
-// 	// 	ra(head);
-// 	// 	sa(head);
-// 	// }
-// 	// if ()
-// }
 
 t_list	*lst_pop_first(t_list **head)
 {
@@ -84,14 +64,6 @@ t_list	*get_median(t_list *head) // get better name
 	return (tmp);
 }
 
-// void	sort_stack(t_list **head)
-// {
-// 	t_list	*stack_b;
-
-// 	stack_b = 0;
-// }
-
-
 int	main(int argc, char *argv[])
 {
 	t_list	*stack;
@@ -99,10 +71,10 @@ int	main(int argc, char *argv[])
 	stack = 0;
 	if (argc > 1)
 		stack = init_list(argc, argv);
-	printf("Before\n");
-	output_list(stack);
+	// printf("Before\n");
+	// output_list(stack);
 	order_five(&stack);
-	printf("After\n");
-	output_list(stack);
+	// printf("After\n");
+	// output_list(stack);
 	lst_clear(&stack);
 }
