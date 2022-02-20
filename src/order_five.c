@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:38:35 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/20 17:06:35 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:35:23 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	find_next(t_list **stack, t_list *median)
 {
-	int	i;
-	int	stack_size;
-	t_list	*copy = 0;
-	copy = lst_dup(*stack);
+	int		i;
+	int		stack_size;
+	t_list	*copy;
 
 	i = 1;
+	copy = lst_dup(*stack);
 	stack_size = lst_size(*stack) / 2;
 	if (stack_size % 2 != 0)
 		stack_size += 1;
@@ -28,6 +28,7 @@ void	find_next(t_list **stack, t_list *median)
 		copy = copy->next;
 		i++;
 	}
+	lst_clear(&copy);
 	while ((*stack)->content >= median->content)
 	{
 		if (i <= stack_size)
@@ -35,10 +36,9 @@ void	find_next(t_list **stack, t_list *median)
 		else
 			rra(stack);
 	}
-	lst_clear(&copy);
 }
 
-void	order_five(t_list **stack_a) // find better logic worst case 15 moves best case 7
+void	order_five(t_list **stack_a)
 {
 	t_list	*stack_b;
 	t_list	*median;
@@ -53,10 +53,10 @@ void	order_five(t_list **stack_a) // find better logic worst case 15 moves best 
 		find_next(stack_a, median);
 		pb(stack_a, &stack_b);
 	}
+	lst_clear(&copy);
 	base_order_two_b(&stack_b);
 	if (check_crescent_order(*stack_a))
 		base_order_three_a(stack_a);
 	pa(stack_a, &stack_b);
 	pa(stack_a, &stack_b);
-	lst_clear(&copy);
 }
