@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 23:37:11 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/18 16:25:12 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/21 09:27:38 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,12 @@
 
 static void	push(t_list **head_a, t_list **head_b)
 {
-	t_list	*tmp;
-	t_list	*next;
+	t_list	*poped;
 
 	if (*head_b)
 	{
-		tmp = *head_b;
-		lst_addfront(head_a, lst_new(tmp->content));
-		if ((*head_b)->next)
-		{
-			next = (*head_b)->next;
-			next->prev = 0;
-			(*head_b)->next = next->next;
-			*head_b = next;
-		}
-		else
-			*head_b = 0;
-		free(tmp);
+		poped = lst_pop_first(head_b);
+		lst_addfront(head_a, poped);
 	}
 }
 

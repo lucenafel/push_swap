@@ -6,11 +6,24 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:38:35 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/20 17:35:23 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/21 09:09:11 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		find_node(t_list *head, t_list *median)
+{
+	int	i;
+
+	i = 0;
+	while (head->content > median->content)
+	{
+		head= head->next;
+		i++;
+	}
+	return (i);
+}
 
 void	find_next(t_list **stack, t_list *median)
 {
@@ -23,11 +36,7 @@ void	find_next(t_list **stack, t_list *median)
 	stack_size = lst_size(*stack) / 2;
 	if (stack_size % 2 != 0)
 		stack_size += 1;
-	while (copy->content > median->content)
-	{
-		copy = copy->next;
-		i++;
-	}
+	i = find_node(copy, median);
 	lst_clear(&copy);
 	while ((*stack)->content >= median->content)
 	{
@@ -38,7 +47,7 @@ void	find_next(t_list **stack, t_list *median)
 	}
 }
 
-void	order_five(t_list **stack_a)
+void	order_five(t_list **stack_a) // functional, but with leaks
 {
 	t_list	*stack_b;
 	t_list	*median;

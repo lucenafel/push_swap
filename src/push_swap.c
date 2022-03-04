@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/20 17:29:19 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:14:02 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	output_list(t_list *head) // remove
 
 	i = 1;
 	tmp = head;
+	printf("List contents\n");
 	while (tmp)
 	{
 		printf("content of %d node -> %ld\n", i, tmp->content);
@@ -28,19 +29,19 @@ void	output_list(t_list *head) // remove
 	}
 }
 
-t_list	*lst_pop_first(t_list **head)
-{
-	t_list	*poped;
-	t_list	*new_head;
+// t_list	*lst_pop_first(t_list **head)
+// {
+// 	t_list	*poped;
+// 	t_list	*new_head;
 
-	poped = *head;
-	new_head = (*head)->next;
-	new_head->prev = 0;
-	(*head)->next = new_head->next;
-	(*head) = new_head;
-	poped->next = 0;
-	return (poped);
-}
+// 	poped = *head;
+// 	new_head = (*head)->next;
+// 	new_head->prev = 0;
+// 	(*head)->next = new_head->next;
+// 	(*head) = new_head;
+// 	poped->next = 0;
+// 	return (poped);
+// }
 
 t_list	*get_median(t_list *head) // get better name
 {
@@ -67,13 +68,29 @@ t_list	*get_median(t_list *head) // get better name
 int	main(int argc, char *argv[])
 {
 	t_list	*stack;
+	t_list	*stack_b;
+
 
 	stack = 0;
+	stack_b = 0;
 	if (argc > 1)
 		stack = init_list(argc, argv);
+
+	output_list(stack);
+	if (lst_size(stack) == 5)
+		order_five(&stack);
+	else
+		big_order_a(&stack, &stack_b);
+
+
+	// printf("original list \n");
+	// output_list(stack);
+	// printf("copy list \n");
+	// copy = recursive_dup(stack);
+	// output_list(copy);
 	// printf("Before\n");
 	// output_list(stack);
-	order_five(&stack);
+	// order_five(&stack);
 	// printf("After\n");
 	// output_list(stack);
 	lst_clear(&stack);

@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:55:19 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/19 22:25:44 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/21 09:27:52 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 static void	rotate(t_list **head)
 {
-	t_list	*next;
 	t_list	*tmp;
 
 	if (*head)
 	{
-		tmp = *head;
-		next = (*head)->next;
-		(*head)->next = next->next;
-		(*head) = next;
-		tmp->next = 0;
-		tmp->prev = 0;
+		tmp = lst_pop_first(head);
 		lst_addback(head, tmp);
 	}
 }

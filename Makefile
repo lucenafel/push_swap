@@ -6,7 +6,7 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/02/19 18:50:10 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/02/22 10:21:38 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS	= check_int_limit.c \
 		  qsort.c \
 		  base_case.c \
 		  order_five.c \
+		  big_case.c \
 		  $(PAUXSRC) \
 		  $(PLSTSRC) \
 		  $(PMOVSRC)
@@ -43,6 +44,7 @@ LSTSRC	= lst_addback.c \
 		  lst_dup.c \
 		  lst_last.c \
 		  lst_newnode.c \
+		  lst_pop.c \
 		  lst_size.c
 
 MOVSRC	= push.c \
@@ -50,9 +52,9 @@ MOVSRC	= push.c \
 		  rotate.c \
 		  swap.c
 
-SDIR	= ./src/
+SDIR	= src/
 
-ODIR	= ./obj/
+ODIR	= obj/
 
 AUXDIR	= aux_func/
 
@@ -79,7 +81,7 @@ INCLUDE = -I ./include
 RM		= rm -rf
 
 $(ODIR)%.o:	$(SDIR)%.c
-			@mkdir -p $(OBJDIR) $(addprefix $(ODIR)/, $(DIR))
+			@mkdir -p $(addprefix $(ODIR)/, $(DIR))
 			@$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)

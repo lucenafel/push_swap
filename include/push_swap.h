@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/19 18:50:20 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/02/21 09:45:23 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	lst_clear(t_list **head);
 t_list	*lst_dup(t_list *head);
 t_list	*lst_last(t_list *head);
 t_list	*lst_new(long content);
+t_list	*lst_pop_first(t_list **head);
 int		lst_size(t_list *head);
 
 /* moves functions */
@@ -80,5 +81,6 @@ void	base_order_three_b(t_list **head);
 t_list	*get_median(t_list *head);
 void	base_order_two_b(t_list **head);
 void	order_five(t_list **stack_a);
+void	big_order_a(t_list **head_a, t_list **head_b);
 
 #endif
