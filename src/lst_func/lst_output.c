@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_dup.c                                          :+:      :+:    :+:   */
+/*   lst_output.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 21:12:25 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/19 23:31:46 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/04/21 16:21:59 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/04/21 16:23:49 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-t_list	*lst_dup(t_list *head)
+void	lst_output(t_list *head)
 {
-	t_list	*copy;
 	t_list	*tmp;
+	int		i;
 
-	copy = 0;
-	if (head)
+	i = 1;
+	tmp = head;
+	while (tmp)
 	{
-		copy = 0;
-		tmp = head;
-		while (tmp)
-		{
-			lst_addback(&copy, lst_new(tmp->content));
-			tmp = tmp->next;
-		}
+		printf("content of %d node -> %ld\n", i , tmp->content);
+		tmp = tmp->next;
+		i++;
 	}
-	return (copy);
 }

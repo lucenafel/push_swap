@@ -4,5 +4,6 @@ a.out
 .vscode
 /test/*
 push_swap
-.ccls-cache/
+.clangd/
 check_pushswap
+compile_commands.json

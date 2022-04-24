@@ -6,7 +6,7 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/02/22 10:21:38 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/04/21 16:24:45 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ LSTSRC	= lst_addback.c \
 		  lst_last.c \
 		  lst_newnode.c \
 		  lst_pop.c \
-		  lst_size.c
+		  lst_size.c \
+		  lst_output.c
 
 MOVSRC	= push.c \
 		  reverse_rotate.c \
@@ -82,12 +83,12 @@ RM		= rm -rf
 
 $(ODIR)%.o:	$(SDIR)%.c
 			@mkdir -p $(addprefix $(ODIR)/, $(DIR))
-			@$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $@
+			$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(INCLUDE) $(CFLAGS) $(MOBJ) $(OBJS) -o $(NAME)
+			@$(CC) $(INCLUDE) $(CFLAGS) $(MOBJ) $(OBJS) -o $(NAME)
 
 
 bonus:		$(BNAME)

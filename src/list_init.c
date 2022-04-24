@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 20:17:35 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/27 20:25:04 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:40:14 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static t_list	*split_arg(char **argv) // change function name
 	return (list);
 }
 
-static t_list	*func_else(char **argv) // change function name
+static t_list	*exec_checklist(char **argv)
 {
 	t_list	*list;
 	int		res;
@@ -80,6 +80,6 @@ t_list	*init_list(int argc, char **argv)
 	if (argc == 2)
 		list = split_arg(argv);
 	else
-		list = func_else(argv);
+		list = exec_checklist(argv);
 	return (list);
 }

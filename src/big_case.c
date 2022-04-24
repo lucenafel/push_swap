@@ -6,12 +6,11 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 09:30:08 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/21 10:29:44 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/21 16:36:19 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 /* limit the acess to the list for each recursive call made */
 
@@ -34,14 +33,22 @@ void	big_order_a(t_list **head_a, t_list **head_b)
 	copy = lst_dup(*head_a);
 	q_sort(copy, lst_last(copy));
 	pivot = get_median(copy);
-	while ((*head_a)->content != pivot->content)
+	int size = lst_size(*head_a);
+	int i = 0;
+	while (i < size)
 	{
 		find_next_a(head_a, pivot);
-		pb(head_a, head_b);
+		if ((*head_a)->content <= pivot->content)
+			pb(head_a, head_b);
+		i++;
 	}
 	lst_clear(&copy);
-	big_order_b(head_a, head_b);
-	big_order_a(head_a, head_b);
+	#include <stdio.h>
+	i = 1;
+	while ((*head_a)->next)
+		printf("content of %d -> %ld\n", i++, (*head_a)->content);
+	/* big_order_b(head_a, head_b); */
+	/* big_order_a(head_a, head_b); */
 }
 
 void	big_order_b(t_list **head_a, t_list **head_b)
@@ -59,7 +66,7 @@ void	big_order_b(t_list **head_a, t_list **head_b)
 	copy = lst_dup(*head_b);
 	q_sort(copy, lst_last(copy));
 	pivot = get_median(copy);
-	while ((*head_b)->content != pivot->content)
+	while ((*head_b)->content <= pivot->content)
 	{
 		find_next_b(head_b, pivot);
 		pa(head_a, head_b);
@@ -69,7 +76,7 @@ void	big_order_b(t_list **head_a, t_list **head_b)
 	big_order_b(head_a, head_b);
 }
 
-int		find_node_a(t_list *head, t_list *median)
+int	find_node_a(t_list *head, t_list *median)
 {
 	int	i;
 
@@ -78,14 +85,14 @@ int		find_node_a(t_list *head, t_list *median)
 	{
 		while (head->content > median->content)
 		{
-			head= head->next;
+			head = head->next;
 			i++;
 		}
 	}
 	return (i);
 }
 
-int		find_node_b(t_list *head, t_list *median)
+int	find_node_b(t_list *head, t_list *median)
 {
 	int	i;
 
@@ -94,7 +101,7 @@ int		find_node_b(t_list *head, t_list *median)
 	{
 		while (head->content < median->content)
 		{
-			head= head->next;
+			head = head->next;
 			i++;
 		}
 	}
@@ -109,7 +116,8 @@ void	find_next_a(t_list **stack, t_list *median)
 
 	if (!*stack)
 		return ;
-	i = 1;
+	lst_output(*stack);
+	i = 0;
 	copy = lst_dup(*stack);
 	stack_size = lst_size(*stack) / 2;
 	if (stack_size % 2 != 0)

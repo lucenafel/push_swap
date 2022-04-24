@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 19:30:03 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/12 20:58:40 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/15 15:47:05 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static t_list	*partition(t_list *first, t_list *last)
 
 	pivot = first;
 	front = first;
-	tmp  = 0;
+	tmp = 0;
 	while (front && front != last)
 	{
 		if (front->content < last->content)

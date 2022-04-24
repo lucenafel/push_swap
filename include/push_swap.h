@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:43:36 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/21 09:45:23 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/21 16:24:25 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_list	*lst_last(t_list *head);
 t_list	*lst_new(long content);
 t_list	*lst_pop_first(t_list **head);
 int		lst_size(t_list *head);
+void	lst_output(t_list *head); //remove
 
 /* moves functions */
 

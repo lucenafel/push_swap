@@ -6,12 +6,13 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/21 10:14:02 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:01:31 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> // remove
+#include <unistd.h>
 
 void	output_list(t_list *head) // remove
 {
@@ -76,22 +77,11 @@ int	main(int argc, char *argv[])
 	if (argc > 1)
 		stack = init_list(argc, argv);
 
-	output_list(stack);
+	/* output_list(stack); */
 	if (lst_size(stack) == 5)
 		order_five(&stack);
 	else
 		big_order_a(&stack, &stack_b);
-
-
-	// printf("original list \n");
-	// output_list(stack);
-	// printf("copy list \n");
-	// copy = recursive_dup(stack);
-	// output_list(copy);
-	// printf("Before\n");
-	// output_list(stack);
-	// order_five(&stack);
-	// printf("After\n");
-	// output_list(stack);
 	lst_clear(&stack);
 }
+

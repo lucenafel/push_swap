@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:38:35 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/02/21 09:09:11 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:18:31 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	find_next(t_list **stack, t_list *median)
 	}
 }
 
-void	order_five(t_list **stack_a) // functional, but with leaks
+void	order_five(t_list **stack_a)
 {
 	t_list	*stack_b;
 	t_list	*median;
