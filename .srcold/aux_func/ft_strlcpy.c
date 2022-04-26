@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_int_limit.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:07 by lsmachine        ###   ########.fr       */
+/*   Created: 2021/05/24 13:05:39 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/06 18:59:32 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_int_limit(t_stack *lst)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	res;
-	int	iter;
+	size_t	i;
 
-	res = 0;
-	iter = 0;
-	while (iter < lst->size)
+	if (!dst || !src)
+		return (0);
+	i = 0;
+	if (size > 0)
 	{
-		if (lst->content[iter] < INT_MIN || lst->content[iter] > INT_MAX)
-			res++;
-		iter++;
+		while (i < size - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (res);
+	return (ft_strlen(src));
 }

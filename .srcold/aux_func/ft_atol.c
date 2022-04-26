@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_int_limit.c                                  :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:07 by lsmachine        ###   ########.fr       */
+/*   Created: 2022/01/26 04:04:02 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/26 20:12:56 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	check_int_limit(t_stack *lst)
+long	ft_atol(const char *str)
 {
-	int	res;
-	int	iter;
+	int		signal;
+	long	result;
 
-	res = 0;
-	iter = 0;
-	while (iter < lst->size)
+	result = 0;
+	signal = 1;
+	while (*str == ' ' || *str == '\n' || *str == '\t'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 	{
-		if (lst->content[iter] < INT_MIN || lst->content[iter] > INT_MAX)
-			res++;
-		iter++;
+		str++;
 	}
-	return (res);
+	if (*str == '-')
+	{
+		signal = -1;
+		str++;
+	}
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = (result * 10) + (*str - '0');
+		str++;
+	}
+	return (result * signal);
 }

@@ -6,30 +6,30 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/21 15:52:35 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:50:36 by lsmachine        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_dup(t_list *head)
+int	check_dup(t_stack *lst)
 {
-	t_list	*i;
-	t_list	*j;
-	int		res;
+	int	i;
+	int	j;
+	int	res;
 
-	i = head;
+	i = 0;
 	res = 0;
-	while (i && !res)
+	while (i < lst->size && !res)
 	{
-		j = i->next;
-		while (j && !res)
+		j = i + 1;
+		while (j < lst->size && !res)
 		{
-			if (i->content == j->content)
+			if (lst->content[i] == lst->content[j])
 				res++;
-			j = j->next;
+			j++;
 		}
-		i = i->next;
+		i++;
 	}
 	return (res);
 }

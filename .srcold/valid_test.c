@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_int_limit.c                                  :+:      :+:    :+:   */
+/*   valid_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:07 by lsmachine        ###   ########.fr       */
+/*   Created: 2021/12/16 20:48:43 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/27 13:35:57 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_int_limit(t_stack *lst)
+static int	check_arg(char *str)
 {
+	int	i;
 	int	res;
-	int	iter;
 
+	i = 0;
 	res = 0;
-	iter = 0;
-	while (iter < lst->size)
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i] && !res)
 	{
-		if (lst->content[iter] < INT_MIN || lst->content[iter] > INT_MAX)
-			res++;
-		iter++;
+		if (!ft_isdigit(str[i]))
+		{
+			res = 1;
+		}
+		i++;
+	}
+	return (res);
+}
+
+int	check_list(char **list)
+{
+	int	i;
+	int	res;
+
+	i = 0;
+	res = 0;
+	while (list[i] && !res)
+	{
+		res = check_arg(list[i]);
+		i++;
 	}
 	return (res);
 }

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_int_limit.c                                  :+:      :+:    :+:   */
+/*   dup_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:07 by lsmachine        ###   ########.fr       */
+/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/21 15:52:35 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_int_limit(t_stack *lst)
+int	check_dup(t_list *head)
 {
-	int	res;
-	int	iter;
+	t_list	*i;
+	t_list	*j;
+	int		res;
 
+	i = head;
 	res = 0;
-	iter = 0;
-	while (iter < lst->size)
+	while (i && !res)
 	{
-		if (lst->content[iter] < INT_MIN || lst->content[iter] > INT_MAX)
-			res++;
-		iter++;
+		j = i->next;
+		while (j && !res)
+		{
+			if (i->content == j->content)
+				res++;
+			j = j->next;
+		}
+		i = i->next;
 	}
 	return (res);
 }

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_int_limit.c                                  :+:      :+:    :+:   */
+/*   space_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:46 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:07 by lsmachine        ###   ########.fr       */
+/*   Created: 2022/01/21 16:02:54 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/01/26 20:21:27 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_int_limit(t_stack *lst)
+char	**space_check(char *argv)
 {
-	int	res;
-	int	iter;
+	int		i;
+	int		res;
+	char	**split;
 
+	i = 0;
 	res = 0;
-	iter = 0;
-	while (iter < lst->size)
+	split = 0;
+	while (argv[i] && !res)
 	{
-		if (lst->content[iter] < INT_MIN || lst->content[iter] > INT_MAX)
-			res++;
-		iter++;
+		res = ft_isspace(argv[i]);
+		i++;
 	}
-	return (res);
+	if (res)
+		split = ft_split(argv, ' ');
+	return (split);
 }

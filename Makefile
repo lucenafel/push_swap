@@ -6,7 +6,7 @@
 #    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/04/21 16:24:45 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/04/26 17:10:08 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= check_int_limit.c \
 		  check_order.c \
 		  dup_check.c \
 		  list_init.c \
-		  push_swap.c \
+		  main.c \
 		  space_check.c \
 		  valid_test.c \
 		  qsort.c \
