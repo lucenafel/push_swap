@@ -3,86 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/12 14:38:58 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/04/26 17:10:08 by lfelipe-         ###   ########.fr        #
+#    Created: 2022/04/22 13:35:00 by lfelipe-          #+#    #+#              #
+#    Updated: 2022/04/29 17:55:04 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
+NAME		= push_swap
 
-SRCS	= check_int_limit.c \
-		  check_order.c \
-		  dup_check.c \
-		  list_init.c \
-		  main.c \
-		  space_check.c \
-		  valid_test.c \
-		  qsort.c \
-		  base_case.c \
-		  order_five.c \
-		  big_case.c \
-		  $(PAUXSRC) \
-		  $(PLSTSRC) \
-		  $(PMOVSRC)
+SRCS		= main.c \
+			  $(PAUX) \
+			  $(PPAR)
 
-AUXSRC	= ft_atol.c \
-		  ft_free.c \
-		  ft_isdigit.c \
-		  ft_isspace.c \
-		  ft_putendl_fd.c \
-		  ft_putstr_fd.c \
-		  ft_split.c \
-		  ft_strlcpy.c \
-		  ft_strlen.c \
-		  ft_substr.c 
 
-LSTSRC	= lst_addback.c \
-		  lst_addfront.c \
-		  lst_clear.c \
-		  lst_dup.c \
-		  lst_last.c \
-		  lst_newnode.c \
-		  lst_pop.c \
-		  lst_size.c \
-		  lst_output.c
+AUX			= ft_atol.c \
+			  ft_free.c \
+			  ft_isdigit.c \
+			  ft_isspace.c \
+			  ft_putendl_fd.c \
+			  ft_putstr_fd.c \
+			  ft_split.c \
+			  ft_strlcpy.c \
+			  ft_strlen.c \
+			  ft_substr.c \
 
-MOVSRC	= push.c \
-		  reverse_rotate.c \
-		  rotate.c \
-		  swap.c
+PARSING		= check_int_limit.c \
+			  dup_check.c \
+			  exec_parsing.c \
+			  ft_quit.c \
+			  init_stack.c \
+			  lst_init.c \
+			  space_check.c \
+			  valid_test.c
 
-SDIR	= src/
+SDIR		= src/
 
-ODIR	= obj/
+ODIR		= obj/
 
-AUXDIR	= aux_func/
+ADIR		= aux/
 
-LSTDIR	= lst_func/
+PDIR		= parsing/
 
-MOVDIR	= moves_func/
+PAUX		= $(addprefix $(ADIR), $(AUX))
 
-PAUXSRC	= $(addprefix $(AUXDIR), $(AUXSRC))
+PPAR		= $(addprefix $(PDIR), $(PARSING))
 
-PLSTSRC	= $(addprefix $(LSTDIR), $(LSTSRC))
+DIR			= $(ADIR) $(PDIR)
 
-PMOVSRC	= $(addprefix $(MOVDIR), $(MOVSRC))
+OBJS		= $(addprefix $(ODIR), $(SRCS:.c=.o))
 
-OBJS	= $(addprefix $(ODIR), $(SRCS:.c=.o))
+CC			= gcc
 
-DIR		= $(AUXDIR) $(LSTDIR) $(MOVDIR)
+CFLAGS		= -Wall -Wextra -Werror
 
-CC		= gcc
+INCLUDE		= -I ./include
 
-CFLAGS	= -Wall -Wextra -Werror
-
-INCLUDE = -I ./include
-
-RM		= rm -rf
+RM			= rm -rf
 
 $(ODIR)%.o:	$(SDIR)%.c
-			@mkdir -p $(addprefix $(ODIR)/, $(DIR))
+			@mkdir -p $(addprefix $(ODIR), $(DIR))
 			$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 all:		$(NAME)
@@ -90,15 +70,14 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			@$(CC) $(INCLUDE) $(CFLAGS) $(MOBJ) $(OBJS) -o $(NAME)
 
-
 bonus:		$(BNAME)
 
-clean:
-			$(RM) $(OBJS) $(ODIR)
+clean:		
+			@$(RM) $(OBJS) $(ODIR)
 
 fclean:		clean
-			$(RM) $(NAME) $(OBJS) $(ODIR)
+			@$(RM) $(NAME) $(OBJS) $(ODIR)
 
 re:			fclean all
 
-.PHONY= all bonus clean fclean re
+.PHONY		= all bonus clean fclean re

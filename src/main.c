@@ -1,87 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 15:21:45 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/19 17:01:31 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/04/22 13:55:58 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/04/29 18:07:52 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> // remove
-#include <unistd.h>
 
-void	output_list(t_list *head) // remove
+#include <stdio.h>
+
+void	swap(t_list *stack, char flag)
 {
-	t_list	*tmp;
-	int		i;
+	int	temp;
 
-	i = 1;
-	tmp = head;
-	printf("List contents\n");
-	while (tmp)
+	if (stack->size >= 2)
 	{
-		printf("content of %d node -> %ld\n", i, tmp->content);
-		tmp = tmp->next;
-		i++;
+		temp = stack->content[0];
+		stack->content[0] = stack->content[1];
+		stack->content[1] = temp;
+		write(1, "s", 1);
+		write(1, &flag, 1);
+		write(1, "\n", 1);
 	}
 }
 
-// t_list	*lst_pop_first(t_list **head)
-// {
-// 	t_list	*poped;
-// 	t_list	*new_head;
-
-// 	poped = *head;
-// 	new_head = (*head)->next;
-// 	new_head->prev = 0;
-// 	(*head)->next = new_head->next;
-// 	(*head) = new_head;
-// 	poped->next = 0;
-// 	return (poped);
-// }
-
-t_list	*get_median(t_list *head) // get better name
+int main(int argc, char *argv[])
 {
-	t_list	*tmp;
-	int		mediam;
-	int		size;
-	int		i;
-
-	i = 1;
-	tmp = head;
-	size = lst_size(head);
-	if (size % 2 == 0)
-		mediam = size / 2;
-	else
-		mediam = (size + 1) / 2;
-	while (i < mediam)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	return (tmp);
+	t_stack	stack;
+	init_stack(&stack);
+	exec_parsing(argc, argv, &stack);
+	int i;
+	i = 0;
+	printf("%d\n", stack.stack_a.size);
+	while (i < stack.stack_a.size)
+		printf("%ld\n", stack.stack_a.content[i++]);
+	/* i = 0; */
+	/* while (i < stack.stack_a.size) */
+	/* 	printf("%ld\n", stack.stack_a.content[i++]); */
+	free(stack.stack_a.content);
+	return (0);
 }
-
-int	main(int argc, char *argv[])
-{
-	t_list	*stack;
-	t_list	*stack_b;
-
-
-	stack = 0;
-	stack_b = 0;
-	if (argc > 1)
-		stack = init_list(argc, argv);
-
-	/* output_list(stack); */
-	if (lst_size(stack) == 5)
-		order_five(&stack);
-	else
-		big_order_a(&stack, &stack_b);
-	lst_clear(&stack);
-}
-

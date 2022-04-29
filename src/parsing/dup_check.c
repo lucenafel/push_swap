@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   space_check.c                                      :+:      :+:    :+:   */
+/*   dup_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 16:02:54 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/01/26 20:21:27 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/04/26 19:33:15 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/04/26 21:54:06 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**space_check(char *argv)
+int	dup_check(t_list *lst)
 {
-	int		i;
-	int		res;
-	char	**split;
+	int	i;
+	int	j;
+	int	res;
 
 	i = 0;
 	res = 0;
-	split = 0;
-	while (argv[i] && !res)
+	while (i < lst->size && !res)
 	{
-		res = ft_isspace(argv[i]);
+		j = i + 1;
+		while (j < lst->size && !res)
+		{
+			if (lst->content[i] == lst->content[j])
+				res++;
+			j++;
+		}
 		i++;
 	}
-	if (res)
-		split = ft_split(argv, ' ');
-	return (split);
+	return (res);
 }

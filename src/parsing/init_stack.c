@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dup_check.c                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:47:02 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/26 16:50:36 by lsmachine        ###   ########.fr       */
+/*   Created: 2022/04/29 17:19:04 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/04/29 17:23:20 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_dup(t_stack *lst)
+void	init_stack(t_stack *stack)
 {
-	int	i;
-	int	j;
-	int	res;
-
-	i = 0;
-	res = 0;
-	while (i < lst->size && !res)
-	{
-		j = i + 1;
-		while (j < lst->size && !res)
-		{
-			if (lst->content[i] == lst->content[j])
-				res++;
-			j++;
-		}
-		i++;
-	}
-	return (res);
+	stack->stack_a.size = -1;
+	stack->stack_b.size = -1;
+	stack->stack_a.content = 0;
+	stack->stack_b.content = 0;
 }
