@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:55:58 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/29 18:07:52 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:04:48 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
 	t_stack	stack;
 	init_stack(&stack);
 	exec_parsing(argc, argv, &stack);
-	int i;
-	i = 0;
-	printf("%d\n", stack.stack_a.size);
-	while (i < stack.stack_a.size)
-		printf("%ld\n", stack.stack_a.content[i++]);
+	/* int i; */
+	/* i = 0; */
+	/* printf("%d\n", stack.stack_a.size); */
+	/* while (i < stack.stack_a.size) */
+	/* 	printf("%ld\n", stack.stack_a.content[i++]); */
 	/* i = 0; */
 	/* while (i < stack.stack_a.size) */
 	/* 	printf("%ld\n", stack.stack_a.content[i++]); */

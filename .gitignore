@@ -5,5 +5,5 @@ a.out
 /test/*
 push_swap
 .clangd/
-check_pushswap
 compile_commands.json
+checker_linux
