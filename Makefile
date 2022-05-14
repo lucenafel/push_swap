@@ -6,7 +6,7 @@
 #    By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/22 13:35:00 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/04/29 17:55:04 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/05/10 17:01:34 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME		= push_swap
 
 SRCS		= main.c \
 			  $(PAUX) \
-			  $(PPAR)
+			  $(PPAR) \
+			  $(PMOV)
 
 
 AUX			= ft_atol.c \
@@ -37,6 +38,8 @@ PARSING		= check_int_limit.c \
 			  space_check.c \
 			  valid_test.c
 
+MOVES		= push.c \
+
 SDIR		= src/
 
 ODIR		= obj/
@@ -45,11 +48,15 @@ ADIR		= aux/
 
 PDIR		= parsing/
 
+MDIR		= moves_func/
+
 PAUX		= $(addprefix $(ADIR), $(AUX))
 
 PPAR		= $(addprefix $(PDIR), $(PARSING))
 
-DIR			= $(ADIR) $(PDIR)
+PMOV		= $(addprefix $(MDIR), $(MOVES))
+
+DIR			= $(ADIR) $(PDIR) $(MDIR)
 
 OBJS		= $(addprefix $(ODIR), $(SRCS:.c=.o))
 

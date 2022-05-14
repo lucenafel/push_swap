@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:32:21 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/04/29 17:35:40 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:26:06 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@ int		check_list(char **list);
 void	ft_quit(char **split, t_list *lst);
 void	exec_parsing(int argc, char **argv, t_stack *stack);
 void	init_stack(t_stack *stack);
+
+/* moves */
+
+void	push(t_list *stack_a, t_list *stack_b);
 
 #endif
