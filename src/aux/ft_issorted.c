@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_issorted.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 13:55:58 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/20 18:46:49 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/05/20 17:41:31 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/05/20 18:30:13 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-#include <stdio.h> // remove
-
-void	output_stack(t_list *stack)
+int	ft_issorted(long *arr, int arr_size)
 {
-	int i;
+	int	i;
 
-	i = 0;
-	while (i < stack->size) {
-		printf("%ld ", stack->content[i++]);
+	i = 1;
+	if (arr_size == 0 || arr_size == 1)
+		return (1);
+	while (i < arr_size)
+	{
+		if (arr[i - 1] > arr[i])
+			return (0);
+		i++;
 	}
-	printf("\n");
+	return (1);
 }
 
-int main(int argc, char *argv[])
+int	ft_isrevsorted(long *arr, int arr_size)
 {
-	t_stack	stack;
+	int	i;
 
-	init_stack(&stack);
-	exec_parsing(argc, argv, &stack);
-	free(stack.stack_a.content);
-	return (0);
+	i = 1;
+	if (arr_size == 0 || arr_size == 1)
+		return (1);
+	while (i < arr_size)
+	{
+		if (arr[i - 1] < arr[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

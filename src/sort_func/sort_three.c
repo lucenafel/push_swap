@@ -1,36 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 13:55:58 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/20 18:46:49 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/05/20 19:03:54 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/05/20 20:25:56 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stdio.h> // remove
 
-void	output_stack(t_list *stack)
-{
-	int i;
-
-	i = 0;
-	while (i < stack->size) {
-		printf("%ld ", stack->content[i++]);
-	}
-	printf("\n");
-}
-
-int main(int argc, char *argv[])
-{
-	t_stack	stack;
-
-	init_stack(&stack);
-	exec_parsing(argc, argv, &stack);
-	free(stack.stack_a.content);
-	return (0);
-}
