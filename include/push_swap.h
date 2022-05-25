@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:32:21 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/10 17:26:06 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:08:20 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	q_sort(long *arr, int start, int end);
 
 /* parsing */
 
@@ -54,6 +55,21 @@ void	init_stack(t_stack *stack);
 
 /* moves */
 
-void	push(t_list *stack_a, t_list *stack_b);
+void	exec_swap(t_list *stack, char s_name);
+void	exec_push(t_list *src, t_list *dest, char s_name);
+void	exec_rotate(t_list *stack, char s_name);
+void	exec_rev_rotate(t_list *stack, char s_name);
+
+/* sorting */
+
+int		get_pivot_index(t_list *stack, long pivot);
+long	get_pivot(t_list *stack);
+int		find_index(t_list *stack);
+void	sort_two(t_list *stack, char s_name);
+void	r_sort_two(t_list *stack, char s_name);
+void	sort_three(t_list *stack, char s_name);
+void	r_sort_three(t_list *stack , char s_name);
+void	sort_four(t_stack *stack);
+void	sort_five(t_stack *stack);
 
 #endif

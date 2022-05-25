@@ -6,7 +6,7 @@
 #    By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/22 13:35:00 by lfelipe-          #+#    #+#              #
-#    Updated: 2022/05/10 17:01:34 by lfelipe-         ###   ########.fr        #
+#    Updated: 2022/05/24 18:09:41 by lfelipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME		= push_swap
 SRCS		= main.c \
 			  $(PAUX) \
 			  $(PPAR) \
-			  $(PMOV)
+			  $(PMOV) \
+			  $(PSORT)
 
 
 AUX			= ft_atol.c \
@@ -28,6 +29,7 @@ AUX			= ft_atol.c \
 			  ft_strlcpy.c \
 			  ft_strlen.c \
 			  ft_substr.c \
+			  q_sort.c \
 
 PARSING		= check_int_limit.c \
 			  dup_check.c \
@@ -39,6 +41,16 @@ PARSING		= check_int_limit.c \
 			  valid_test.c
 
 MOVES		= push.c \
+			  reverse.c \
+			  rotate.c \
+			  swap.c \
+
+SORT		= get_pivot.c \
+			  sort_two.c \
+			  sort_three.c \
+			  sort_four.c \
+			  sort_five.c \
+			  find_next.c \
 
 SDIR		= src/
 
@@ -50,17 +62,21 @@ PDIR		= parsing/
 
 MDIR		= moves_func/
 
+SSDIR		= sort_func/
+
 PAUX		= $(addprefix $(ADIR), $(AUX))
 
 PPAR		= $(addprefix $(PDIR), $(PARSING))
 
 PMOV		= $(addprefix $(MDIR), $(MOVES))
 
-DIR			= $(ADIR) $(PDIR) $(MDIR)
+PSORT		= $(addprefix $(SSDIR), $(SORT))
+
+DIR			= $(ADIR) $(PDIR) $(MDIR) $(SSDIR)
 
 OBJS		= $(addprefix $(ODIR), $(SRCS:.c=.o))
 
-CC			= gcc
+CC			= gcc -g
 
 CFLAGS		= -Wall -Wextra -Werror
 
