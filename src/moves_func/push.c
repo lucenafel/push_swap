@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:05:20 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/20 16:35:33 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:51:04 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static long	*shift_a(t_list *stack)
 		new_ptr[i] = stack->content[i + 1];
 		i++;
 	}
-	free(stack->content);
+	if (stack->content)
+		free(stack->content);
 	return (new_ptr);
 }
 
@@ -55,11 +56,10 @@ static long	*shift_b(t_list *stack)
 		new_ptr[i] = stack->content[i - 1];
 		i++;
 	}
-	free(stack->content);
 	return (new_ptr);
 }
 
-void	push(t_list *stack_a, t_list *stack_b)
+static void	push(t_list *stack_a, t_list *stack_b)
 {
 	long	push_to;
 	long	*new_ptr_a;
@@ -74,4 +74,14 @@ void	push(t_list *stack_a, t_list *stack_b)
 		stack_a->content = new_ptr_a;
 		stack_b->content = new_ptr_b;
 	}
+}
+
+void	exec_push(t_list *src, t_list *dest, char s_name)
+{
+	char	out[2];
+
+	out[0] = 'p';
+	out[1] = s_name;
+	push(src, dest);
+	ft_putendl_fd(out, 1);
 }

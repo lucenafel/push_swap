@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_two.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 13:55:58 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 19:31:09 by lfelipe-         ###   ########.fr       */
+/*   Created: 2022/05/23 17:04:27 by lfelipe-          #+#    #+#             */
+/*   Updated: 2022/05/24 16:25:46 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stdio.h> // remove
-
-void	output_stack(t_list *stack) // remove
+void	sort_two(t_list *stack, char s_name)
 {
-	int i;
-
-	i = 0;
-	while (i < stack->size) {
-		printf("%ld ", stack->content[i++]);
-	}
-	printf("\n");
+	if (stack->content[0] > stack->content[1])
+		exec_swap(stack, s_name);
 }
 
-int main(int argc, char *argv[])
+void	r_sort_two(t_list *stack, char s_name)
 {
-	t_stack	stack;
-
-	init_stack(&stack);
-	exec_parsing(argc, argv, &stack);
-	output_stack(&stack.stack_a);
-	sort_five(&stack);
-	output_stack(&stack.stack_a);
-	free(stack.stack_a.content);
-	return (0);
+	if (stack->content[0] < stack->content[1])
+		exec_swap(stack, s_name);
 }

@@ -6,13 +6,13 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:26:53 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/20 16:02:00 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/24 19:27:40 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_list *stack)
+static void	rotate(t_list *stack)
 {
 	int		i;
 	long	first;
@@ -21,11 +21,21 @@ void	rotate(t_list *stack)
 	{
 		i = 0;
 		first = stack->content[0];
-		while (i < stack->size)
+		while (i < stack->size - 1)
 		{
 			stack->content[i] = stack->content[i + 1];
 			i++;
 		}
 		stack->content[i - 1] = first;
 	}
+}
+
+void	exec_rotate(t_list *stack, char s_name)
+{
+	char	out[2];
+
+	out[0] = 'r';
+	out[1] = s_name;
+	rotate(stack);
+	ft_putendl_fd(out, 1);
 }
