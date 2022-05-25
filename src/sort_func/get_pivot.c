@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:09:19 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 19:25:10 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:32:36 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long	get_pivot(t_list *stack)
 	if (stack->size % 2)
 		index = stack->size / 2;
 	pivot = copy[index];
+	free(copy);
 	return (pivot);
 }
 

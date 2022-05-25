@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 16:22:52 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 19:20:23 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:20:57 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	sort_five(t_stack *stack)
 		else
 			i = stack->stack_a.size - sm_index;
 		while (i < stack->stack_a.size)
-			{
-				if (sm_index < 2)
-					exec_rotate(&stack->stack_a, 'a');
-				else
-					exec_rev_rotate(&stack->stack_a, 'a');
-				i++;
+		{
+			if (sm_index < 2)
+				exec_rotate(&stack->stack_a, 'a');
+			else
+				exec_rev_rotate(&stack->stack_a, 'a');
+			i++;
 		}
 		exec_push(&stack->stack_a, &stack->stack_b, 'b');
 		j++;

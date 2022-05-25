@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:03:54 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 17:41:39 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:21:38 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sort_three(t_list *stack, char s_name)
 		exec_rotate(stack, s_name);
 }
 
-void	r_sort_three(t_list *stack , char s_name)
+void	r_sort_three(t_list *stack, char s_name)
 {
 	int		pivot_idx;
 	long	pivot;

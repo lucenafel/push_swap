@@ -6,7 +6,7 @@
 /*   By: lfelipe- <lfelipe-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:05:20 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 19:51:04 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/25 17:30:08 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ static long	*shift_a(t_list *stack)
 
 	i = 0;
 	if (stack->size == 1)
-		new_ptr = (long *)malloc(sizeof(long) * 1);
-	else
+	{
+		stack->size--;
+		new_ptr = NULL;
+	}
+	else if (stack->size > 1)
 	{
 		stack->size--;
 		new_ptr = (long *)malloc(sizeof(long) * stack->size);
@@ -31,7 +34,10 @@ static long	*shift_a(t_list *stack)
 		i++;
 	}
 	if (stack->content)
+	{
 		free(stack->content);
+		stack->content = NULL;
+	}
 	return (new_ptr);
 }
 
@@ -41,7 +47,7 @@ static long	*shift_b(t_list *stack)
 	int		i;
 
 	i = 1;
-	if (stack->size < 0)
+	if (stack->size <= 0)
 	{
 		new_ptr = (long *)malloc(sizeof(long) * 1);
 		stack->size = 1;
@@ -55,6 +61,11 @@ static long	*shift_b(t_list *stack)
 	{
 		new_ptr[i] = stack->content[i - 1];
 		i++;
+	}
+	if (stack->content)
+	{
+		free(stack->content);
+		stack->content = NULL;
 	}
 	return (new_ptr);
 }
