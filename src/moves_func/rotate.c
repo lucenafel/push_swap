@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:26:53 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 19:27:40 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/26 23:18:07 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	rotate(t_list *stack)
 			stack->content[i] = stack->content[i + 1];
 			i++;
 		}
-		stack->content[i - 1] = first;
+		stack->content[i] = first;
 	}
 }
 

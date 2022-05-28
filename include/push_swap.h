@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:32:21 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/24 18:08:20 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/05/26 22:33:02 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_stack {
 	t_list	stack_a;
 	t_list	stack_b;
 }	t_stack;
+
+void	output_stack(t_list *stack); // remove
 
 /* aux functions */
 long	ft_atol(const char *str);
