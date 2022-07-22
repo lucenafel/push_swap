@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:32:21 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/26 22:33:02 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/07/22 13:28:40 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	init_stack(t_stack *stack);
 void	exec_swap(t_list *stack, char s_name);
 void	exec_push(t_list *src, t_list *dest, char s_name);
 void	exec_rotate(t_list *stack, char s_name);
+void	exec_rr(t_stack *stack);
 void	exec_rev_rotate(t_list *stack, char s_name);
 
 /* sorting */
@@ -67,10 +68,11 @@ void	exec_rev_rotate(t_list *stack, char s_name);
 int		get_pivot_index(t_list *stack, long pivot);
 long	get_pivot(t_list *stack);
 int		find_index(t_list *stack);
+void	find_next(t_stack *stack);
 void	sort_two(t_list *stack, char s_name);
 void	r_sort_two(t_list *stack, char s_name);
 void	sort_three(t_list *stack, char s_name);
-void	r_sort_three(t_list *stack , char s_name);
+void	r_sort_three(t_list *stack, char s_name);
 void	sort_four(t_stack *stack);
 void	sort_five(t_stack *stack);
 

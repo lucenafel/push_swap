@@ -6,7 +6,7 @@
 /*   By: lfelipe- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:26:53 by lfelipe-          #+#    #+#             */
-/*   Updated: 2022/05/26 23:18:07 by lfelipe-         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:10:28 by lfelipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ void	exec_rotate(t_list *stack, char s_name)
 	out[1] = s_name;
 	rotate(stack);
 	ft_putendl_fd(out, 1);
+}
+
+void	exec_rr(t_stack *stack)
+{
+	rotate(&stack->stack_a);
+	rotate(&stack->stack_b);
+	ft_putendl_fd("rr", 1);
 }
